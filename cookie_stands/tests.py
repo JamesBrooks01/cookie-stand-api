@@ -37,13 +37,6 @@ class CookieStandTests(APITestCase):
     def setUp(self):
         self.client.login(username="testuser1", password="pass")
 
-    # def get_token(self):
-    #     url = "http://0.0.0.0:8000/api/token/"
-    #     user = {"username": "testuser1", "password": "pass"}
-    #     token = self.client.post(url, user)
-    #     response_token = token.data["access"]
-    #     return response_token
-
     def test_cookie_stands_model(self):
         cookie_stand = CookieStand.objects.get(id=1)
         actual_location = str(cookie_stand.location)
@@ -81,7 +74,6 @@ class CookieStandTests(APITestCase):
     def test_create_cookie_stands(self):
         url = reverse("cookie_stands_list")
         data = {"location":"Berlin","owner":1,"description":"Holen Sie sich hier Cookies","hourly_sales":"8675","minimum_customers_per_hour":"12","maximum_customers_per_hour":"35","average_cookies_per_sale":"5.7"}
-        # token = self.get_token()
         response = self.client.post(url, data)
         self.assertEqual(response.status_code, status.HTTP_201_CREATED)
         cookie_stands = CookieStand.objects.all()
