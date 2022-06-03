@@ -1,24 +1,19 @@
-# api-quick-start
+# LAB - Class 34
 
-Template Project for starting up CRUD API with Django Rest Framework
+## Project: Cookie Stand API
 
-## Customization Steps
+## Author: James Brooks
 
-- DO NOT migrate yet
-- add additional dependencies as needed
-  - Re-export requirements.txt as needed
-- change `things` folder to the app name of your choice
-- Search through entire code base for `Thing`,`Things` and `things` to modify code to use your resource
-  - `project/settings.py`
-  - `project/urls.py`
-  - App's files
-    - `views.py`
-    - `urls.py`
-    - `admin.py`
-    - `serializers.py`
-    - `permissions.py`
-- Update ThingModel with fields you need
-  - Make sure to update other modules that would be affected by Model customizations. E.g. serializers, tests, etc.
-- Rename `project/.env.sample` to `.env` and update as needed
-- Run makemigrations and migrate commands
-- Optional: Update `api_tester.py`
+## Links and Resources
+
+- [Front-End](https://james-brooks-cookie-stand-api.herokuapp.com/)
+
+## Setup
+
+- To run the app, if you have docker, use `docker compose up`
+  - If not, run `python manage.py runserver` within a virtual environment
+
+## Tests
+
+- To run the tests, use the `python manage.py test` within a virtual environment/Docker.
+- There are 7 tests in total, with tests for testing the CookieStand model, the views and the CRUD routes, plus an additional test for requiring authentication to see the list page.
